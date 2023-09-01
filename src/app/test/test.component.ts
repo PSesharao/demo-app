@@ -8,28 +8,11 @@ import { Component } from '@angular/core';
 
 export class TestComponent {
 
-  public name = "Sesh"
+  public name = 'Sesh' ; 
 
-  public textspecial = "text-special" 
-
-  public textdanger = "text-danger" 
-
-  public isSpecial = true ;
-  
-  public isDanger = true ; 
-
-  public isboldClass = true ; 
-  public isitalicClass = true ; 
-  public iscolorClass = true ; 
-
-  public messageClasses = {
-    "boldClass" : this.isboldClass , 
-    "italicClass" : this.isitalicClass , 
-    "colorClass" : this.iscolorClass 
-  }
-
+  public greeting = '' ; 
 
   greetUser(){
-    return "Hello " + this.name ; 
+    this.greeting = 'Welcome ' + this.name ; 
   }
 }

@@ -1,7 +1,4 @@
 
-<p [class] = "textspecial"> {{name}} </p> 
+<button (click)="greetUser()"> Greet </button>
 
-
-<p [class.text-danger] = "isDanger" [class.text-special] = "isSpecial"  > {{name}} </p>
-
-<p [ngClass]="messageClasses" > {{name}} </p>
+<h2> {{greeting}} </h2>
