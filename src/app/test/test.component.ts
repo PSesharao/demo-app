@@ -12,7 +12,8 @@ export class TestComponent {
 
   public greeting = '' ; 
 
-  greetUser(){
+  greetUser(event : any ){
     this.greeting = 'Welcome ' + this.name ; 
+    console.log(event)
   }
 }
