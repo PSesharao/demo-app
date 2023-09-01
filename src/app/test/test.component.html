@@ -1,2 +1,7 @@
 
-<input type="text" [value]="name" >
+<p [class] = "textspecial"> {{name}} </p> 
+
+
+<p [class.text-danger] = "isDanger" [class.text-special] = "isSpecial"  > {{name}} </p>
+
+<p [ngClass]="messageClasses" > {{name}} </p>

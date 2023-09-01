@@ -7,7 +7,27 @@ import { Component } from '@angular/core';
 })
 
 export class TestComponent {
-  public name = "SESH"
+
+  public name = "Sesh"
+
+  public textspecial = "text-special" 
+
+  public textdanger = "text-danger" 
+
+  public isSpecial = true ;
+  
+  public isDanger = true ; 
+
+  public isboldClass = true ; 
+  public isitalicClass = true ; 
+  public iscolorClass = true ; 
+
+  public messageClasses = {
+    "boldClass" : this.isboldClass , 
+    "italicClass" : this.isitalicClass , 
+    "colorClass" : this.iscolorClass 
+  }
+
 
   greetUser(){
     return "Hello " + this.name ; 
