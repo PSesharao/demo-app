@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { DataService } from '../data.service';
 import { IEmployee } from './employee';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-test',
@@ -10,15 +11,16 @@ import { IEmployee } from './employee';
 
 export class TestComponent {
 
-  formData = {
-    name: '',
-    email: '',
-    message: '',
-  };
+  myForm : FormGroup = new FormGroup({
+      name: new FormControl(''),
+      email: new FormControl(''),
+      message: new FormControl(''),
+  });
 
   onSubmit() {
     // Handle form submission here
-    console.log('Form Data:', this.formData);
+    console.log('Form Data:', this.myForm.value);
   }
   
+
 }
