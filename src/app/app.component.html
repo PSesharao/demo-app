@@ -1,4 +1,7 @@
 
-<app-test> </app-test>
+<!-- childEvent is the custom event defined in the test component -->
+<app-test [parentData] = "message" (childEvent)="receiveMessage($event)"> </app-test>
+
+<p>{{ childMessage }}</p>
 
 <router-outlet></router-outlet>

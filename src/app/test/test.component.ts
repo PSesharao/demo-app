@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-test',
@@ -8,6 +8,14 @@ import { Component } from '@angular/core';
 
 export class TestComponent {
 
-  items: string[] = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'];
+  @Input() parentData!: string;
+
+  childData = "Hello from Child!";
+
+  @Output() childEvent = new EventEmitter<string>();
+
+  sendMessage() {
+    this.childEvent.emit(this.childData);
+  }
 
 }
