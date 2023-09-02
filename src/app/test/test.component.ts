@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-test',
@@ -8,14 +9,17 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 export class TestComponent {
 
-  @Input() parentData!: string;
+  constructor(private _dataService : DataService ){}
+  
+  items: string[] = [];
 
-  childData = "Hello from Child!";
+  ngOnInit(): void {
+    this.items = this._dataService.getData();
+  }
 
-  @Output() childEvent = new EventEmitter<string>();
-
-  sendMessage() {
-    this.childEvent.emit(this.childData);
+  addItem(): void {
+    this._dataService.addData('New Item');
+    this.items = this._dataService.getData(); // Refresh the list
   }
 
 }
