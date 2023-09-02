@@ -1,5 +1,5 @@
 
-<input #myInput type="text" >
+<input type="text" [(ngModel)] = "dynamicMessage">
 
-<button (click)="Log(myInput)"> Log </button>
+<p> {{dynamicMessage}} </p>
 

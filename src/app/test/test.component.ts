@@ -10,9 +10,7 @@ export class TestComponent {
 
   public name = 'Sesh' ; 
 
-  public greeting = '' ; 
+  public dynamicMessage = '' ; 
 
-  Log( refVarible : any ){
-    console.log(refVarible.value)
-  }
+
 }
