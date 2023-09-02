@@ -1,7 +1,7 @@
 
 
-<h2> Display Data</h2>
-<ul>
-  <li *ngFor="let item of items">{{ item }}</li>
+
+<h2> Employee Details </h2>
+<ul *ngFor="let employee of employees">
+    <li>{{employee.id}}.  {{employee.name}} - {{employee.age}}</li>
 </ul>
-<button (click)="addItem()">Add Item</button>

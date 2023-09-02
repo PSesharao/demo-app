@@ -1,4 +1,7 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { IEmployee } from './test/employee';
 
 @Injectable({
   providedIn: 'root'
@@ -6,16 +9,11 @@ import { Injectable } from '@angular/core';
 
 export class DataService {
 
-  private data: string[] = ['Item 1', 'Item 2', 'Item 3'];
+  private _url = "/assets/data/employees.json" ; 
+  constructor(private http : HttpClient ) { }
 
-  getData(): string[] {
-    return this.data;
-  }
+  getEmployees() : Observable<IEmployee[]>{
+      return this.http.get<IEmployee[]>(this._url) ; 
+  } 
 
-  addData(newItem: string): void {
-    this.data.push(newItem);
-  }
-
-  constructor() { }
-  
 }

@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { DataService } from '../data.service';
+import { IEmployee } from './employee';
 
 @Component({
   selector: 'app-test',
@@ -11,15 +12,11 @@ export class TestComponent {
 
   constructor(private _dataService : DataService ){}
   
-  items: string[] = [];
+  public employees : IEmployee[] = [];
 
-  ngOnInit(): void {
-    this.items = this._dataService.getData();
+  ngOnInit(){
+     this._dataService.getEmployees().subscribe(
+      data =>  this.employees = data 
+    )
   }
-
-  addItem(): void {
-    this._dataService.addData('New Item');
-    this.items = this._dataService.getData(); // Refresh the list
-  }
-
 }
