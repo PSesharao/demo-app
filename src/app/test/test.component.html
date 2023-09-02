@@ -1,10 +1,6 @@
 
 
-<div [ngSwitch]="color">
-    <div *ngSwitchCase="'red'" class="red-box">Red Box</div>
-    <div *ngSwitchCase="'blue'" class="blue-box">Blue Box</div>
-    <div *ngSwitchCase="'green'" class="green-box">Green Box</div>
-    <div *ngSwitchDefault class="default-box">Default Box</div>
-  </div>
+<ul>
+    <li *ngFor="let item of items">{{ item }}</li>
+</ul>
 
-  
