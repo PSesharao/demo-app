@@ -14,9 +14,12 @@ export class TestComponent {
   
   public employees : IEmployee[] = [];
 
+  public errorMsg : string = '' ; 
+
   ngOnInit(){
      this._dataService.getEmployees().subscribe(
-      data =>  this.employees = data 
+      data =>  this.employees = data ,
+      error => this.errorMsg = error
     )
   }
 }
