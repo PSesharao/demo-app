@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { DataService } from '../data.service';
 import { IEmployee } from './employee';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-test',
@@ -11,10 +11,16 @@ import { FormControl, FormGroup } from '@angular/forms';
 
 export class TestComponent {
 
-  myForm : FormGroup = new FormGroup({
-      name: new FormControl(''),
-      email: new FormControl(''),
-      message: new FormControl(''),
+  
+
+  constructor(private fb: FormBuilder) {
+
+  }
+
+  myForm : FormGroup = this.fb.group({
+    name: [''],
+    email:  [''],
+    message:  ['']
   });
 
   onSubmit() {
