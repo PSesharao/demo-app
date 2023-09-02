@@ -1,6 +1,20 @@
 
 
-<p *ngIf="true">Hello </p>
-<p *ngIf="false">World </p>
+<p *ngIf="!canDisplay ; else elseBlock"  > {{name}} </p>
 
- 
+ <ng-template #elseBlock>
+    <p > Name is hidden </p>
+ </ng-template>
+
+
+<!-- Other usage of ngIf  -->
+
+<div *ngIf="canDisplay then thenBlock; else elseBlock" > </div>
+
+<ng-template #thenBlock>
+    <p > {{name}}  </p>
+ </ng-template>
+
+ <ng-template #elseBlock>
+    <p > Name is Hidden </p>
+ </ng-template>
