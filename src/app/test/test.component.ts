@@ -10,16 +10,15 @@ import { IEmployee } from './employee';
 
 export class TestComponent {
 
-  constructor(private _dataService : DataService ){}
-  
-  public employees : IEmployee[] = [];
+  formData = {
+    name: '',
+    email: '',
+    message: '',
+  };
 
-  public errorMsg : string = '' ; 
-
-  ngOnInit(){
-     this._dataService.getEmployees().subscribe(
-      data =>  this.employees = data ,
-      error => this.errorMsg = error
-    )
+  onSubmit() {
+    // Handle form submission here
+    console.log('Form Data:', this.formData);
   }
+  
 }
