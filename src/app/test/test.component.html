@@ -1,20 +1,10 @@
 
 
-<p *ngIf="!canDisplay ; else elseBlock"  > {{name}} </p>
+<div [ngSwitch]="color">
+    <div *ngSwitchCase="'red'" class="red-box">Red Box</div>
+    <div *ngSwitchCase="'blue'" class="blue-box">Blue Box</div>
+    <div *ngSwitchCase="'green'" class="green-box">Green Box</div>
+    <div *ngSwitchDefault class="default-box">Default Box</div>
+  </div>
 
- <ng-template #elseBlock>
-    <p > Name is hidden </p>
- </ng-template>
-
-
-<!-- Other usage of ngIf  -->
-
-<div *ngIf="canDisplay then thenBlock; else elseBlock" > </div>
-
-<ng-template #thenBlock>
-    <p > {{name}}  </p>
- </ng-template>
-
- <ng-template #elseBlock>
-    <p > Name is Hidden </p>
- </ng-template>
+  

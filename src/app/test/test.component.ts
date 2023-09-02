@@ -10,7 +10,7 @@ export class TestComponent {
 
   public name = 'Sesh' ; 
 
-  public canDisplay = true ;  
+  color: string = 'blue';
 
   public dynamicMessage = '' ; 
 
